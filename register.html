@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - TechzonE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+
+    <header class="header">
+        <div class="header-container">
+            <div class="left-section">
+                <a href="profile.html" class="avatar-link">
+                    <div class="avatar">
+                        <img src="imgaccount.png" alt="Личный кабинет">
+                    </div>
+                </a>
+                
+                <div class="nav-buttons">
+                    <a href="profile.html">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">Кабинет</button>
+                    </a>
+                    <a href="index.html">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">Главная</button>
+                    </a>
+                    <a href="catalog.html">
+                    <button class="nav-btn" onclick="window.location.href='catalog.html'">Каталог товаров</button>
+                    </a>
+                </div>
+                
+                <details class="burger-menu">
+                    <summary class="burger-summary">
+                        <img class="burger-icon" src="imgcatalogwhite.png" alt="Меню">
+                    </summary>
+                    <div class="mobile-menu">
+                        <button class="mobile-nav-btn" onclick="window.location.href='index.html'">Поддержка</button>
+                        <a href="index.html">
+                        <button class="mobile-nav-btn" onclick="window.location.href='index.html'">Главная</button>
+                        </a>
+                        <a href="catalog.html">
+                        <button class="mobile-nav-btn" onclick="window.location.href='catalog.html'">Каталог товаров</button>
+                        </a>
+                        
+                        <div class="mobile-search-wrapper">
+                            <input type="text" class="mobile-search-input" placeholder="Поиск:" list="mobileCategorySuggestions">
+                            <datalist id="mobileCategorySuggestions">
+                                <option value="Смартфоны">
+                                <option value="Ноутбуки">
+                                <option value="Часы">
+                            </datalist>
+                            <button class="mobile-search-btn">Найти</button>
+                        </div>
+                        
+                        <a href="profile.html" class="mobile-avatar-link">
+                            <div class="mobile-avatar">
+                                <img src="imgaccount.png" alt="Личный кабинет">
+                                <span>Личный кабинет</span>
+                            </div>
+                        </a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="logo-center">
+                <a href="index.html">
+                    <img class="logo-img" src="logowhite.png" alt="Логотип сайта">
+                </a>
+            </div>
+
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Поиск:" list="categorySuggestions">
+                <datalist id="categorySuggestions">
+                    <option value="Смартфоны">
+                    <option value="Ноутбуки">
+                    <option value="Часы">
+                </datalist>
+                <button class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="register-main">
+        <div class="register-container">
+            <div class="register-card">
+                <div class="register-header">
+                    <h1 class="register-title">Регистрация</h1>
+                    <p class="register-subtitle">Создайте аккаунт в TechzonE</p>
+                </div>
+                
+                <form class="register-form" action="#" method="post">
+
+                    <!--поле почта-->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="example@mail.ru" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле фамилия-->
+                    <div class="form-group">
+                        <label for="surname" class="form-label">Фамилия</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <input type="text" id="surname" name="surname" class="form-input" placeholder="Иванов" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле имя-->
+                    <div class="form-group">
+                        <label for="name" class="form-label">Имя</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Иван" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле дата рождения-->
+                    <div class="form-group">
+                        <label for="birthdate" class="form-label">Дата рождения</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <input type="date" id="birthdate" name="birthdate" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле номер телефона-->
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Номер телефона</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (999) 123-45-67" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле пароль-->
+                    <div class="form-group">
+                        <label for="password" class="form-label">Пароль</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Введите пароль" required>
+                        </div>
+                    </div>
+                    
+                    <!--поле повтор пароля-->
+                    <div class="form-group">
+                        <label for="confirm_password" class="form-label">Повтор пароля</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="Повторите пароль" required>
+                        </div>
+                    </div>
+                    
+                    <!--согласие на обработку ПД-->
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">Я согласен(на) на обработку персональных данных</span>
+                        </label>
+                    </div>
+                    
+                    <!--кнопка регистрации-->
+                    <button type="submit" class="register-btn">Зарегистрироваться</button>
+                    
+                    <div class="register-footer">
+                        <p class="login-text">Уже есть аккаунт? <a href="login.html" class="login-link">Войти</a></p>
+                    </div>
+                </form>
+                
+                <div class="register-message">
+                    <p>✅ Регистрация прошла успешно!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--подвал-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:8-800-999-55-99">8-800-999-55-99</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:tech@zone.ru">tech@zone.ru</a>
+                    </div>
+                    <div class="contact-item about-link">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <a href="#about" class="about-us-link">О нас</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="dropdown-section">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Партнерам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Партнерская программа</a>
+                            <a href="#">Оптовые закупки</a>
+                            <a href="#">Франчайзинг</a>
+                            <a href="#">Рекламодателям</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Клиентам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Поддержка</a>
+                            <a href="#">Доставка и оплата</a>
+                            <a href="#">Возврат и гарантия</a>
+                            <a href="#">Программа лояльности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Главная</a>
+                    <a href="register.html" class="footer-nav-link">Регистрация</a>
+                    <a href="login.html" class="footer-nav-link">Авторизация</a>
+                    <a href="profile.html" class="footer-nav-link">Личный кабинет</a>
+                    <a href="admin.html" class="footer-nav-link">Административаня панель</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-switch-wrapper">
+            <label for="theme-toggle" class="theme-toggle-label">
+                <span class="theme-toggle-slider"></span>
+                <span class="theme-toggle-text">Светлая тема</span>
+            </label>
+        </div>
+    </footer>
+</body>
+</html>

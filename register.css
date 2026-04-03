@@ -1,0 +1,294 @@
+/*регистрация*/
+.register-main {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    background: var(--bg-body);
+}
+
+.register-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.register-card {
+    background: var(--bg-card);
+    border-radius: 32px;
+    padding: 48px 40px;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.register-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--card-text);
+    margin-bottom: 12px;
+}
+
+.register-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*форма регистрации*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--card-text);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px 14px 48px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-body);
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #c6ff33;
+    box-shadow: 0 0 0 3px rgba(198, 255, 51, 0.2);
+}
+
+.form-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/*чекбокс*/
+.checkbox-group {
+    margin: 8px 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: var(--bg-body);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #c6ff33;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label input:checked ~ .checkmark {
+    background: #c6ff33;
+    border-color: #c6ff33;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-text {
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+/*кнопка регистрации*/
+.register-btn {
+    background: linear-gradient(135deg, #c6ff33, #a8d42a);
+    color: #1e293b;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 8px;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(198, 255, 51, 0.4);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+/*сообщение об успехе*/
+.register-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(198, 255, 51, 0.2);
+    border-radius: 12px;
+    border-left: 4px solid #c6ff33;
+}
+
+.register-message p {
+    color: #c6ff33;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.register-form:valid ~ .register-message {
+    display: block;
+}
+
+/*валидация*/
+.form-input:required:valid {
+    border-color: #c6ff33;
+}
+
+.form-input:required:invalid:not(:placeholder-shown) {
+    border-color: #ff6b6b;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.login-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.login-link {
+    color: #7d39eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+/*адаптивность версий*/
+@media (max-width: 768px) {
+    .register-main {
+        padding: 40px 16px;
+    }
+    .register-card {
+        padding: 32px 24px;
+    }
+    .register-title {
+        font-size: 1.6rem;
+    }
+    .form-input {
+        padding: 12px 16px 12px 44px;
+        font-size: 0.95rem;
+    }
+    .register-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 24px 20px;
+    }
+    .register-title {
+        font-size: 1.4rem;
+    }
+    .form-input {
+        padding: 10px 14px 10px 42px;
+    }
+    .checkbox-text {
+        font-size: 0.75rem;
+    }
+}
+.logo-img {
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+#theme-toggle:checked ~ .header .logo-img {
+    filter: brightness(0) invert(0);
+}
+
+.burger-icon {
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+#theme-toggle:checked ~ .header .burger-icon {
+    filter: brightness(0) invert(0);
+}
+.register-main {
+    background: #252525 !important;
+}
+
+body:has(.register-main) {
+    background: #252525 !important;
+}
+#theme-toggle:checked ~ .register-main {
+    background: #252525 !important;
+}
+
+#theme-toggle:checked ~ body:has(.register-main) {
+    background: #252525 !important;
+}

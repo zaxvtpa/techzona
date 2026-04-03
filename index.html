@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechzonE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--чекбокс переключения темы -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+
+    <header class="header">
+        <div class="header-container">
+
+            <!--левая часть шапки-->
+            <div class="left-section">
+              <a href="profile.html">
+                <div class="avatar">
+                    <img src="imgaccount.png" alt="Личный кабинет">
+                </div>
+              </a>
+
+                
+                <!--три кнопки рядом с личным кабинетом-->
+                <div class="nav-buttons">
+                    <a href="profile.html">
+                    <button class="nav-btn">Кабинет</button>
+                    </a>
+                    <a href="index.html">
+                    <button class="nav-btn">Главная</button>
+                    </a>
+                    <a href="catalog.html">
+                    <button class="nav-btn">Каталог товаров</button>
+                    </a>
+                </div>
+                
+                <!--бурегр-меню-->
+                <details class="burger-menu">
+                    <summary class="burger-summary">
+                        <img src="imgcatalogwhite.png" alt="Меню">
+                    </summary>
+                    <div class="mobile-menu">
+                        <button class="mobile-nav-btn">Поддержка</button>
+                        <a href="index.html">
+                        <button class="mobile-nav-btn">Главная</button>
+                        </a>
+                        <a href="catalog.html">
+                        <button class="mobile-nav-btn">Каталог товаров</button>
+                        </a>
+                        
+                        <div class="mobile-search-wrapper">
+                            <input type="text" 
+                                   class="mobile-search-input" 
+                                   placeholder="Поиск:" 
+                                   list="mobileCategorySuggestions">
+                            <datalist id="mobileCategorySuggestions">
+                                <option value="Смартфоны">
+                                <option value="Ноутбуки">
+                                <option value="Часы">
+                            </datalist>
+                            <button class="mobile-search-btn">Найти</button>
+                        </div>
+                        
+                        <a href="profile.html">
+                        <div class="mobile-avatar">
+                            <img src="imgaccount.png" alt="Личный кабинет">
+                            <span>Личный кабинет</span>
+                        </div>
+                        </a>
+                    </div>
+                </details>
+            </div>
+
+            <!--лого по центру-->
+            <div class="logo-center">
+                <img class="logo-img" src="logowhite.png" alt="Логотип сайта">
+            </div>
+
+            <!--поисковая строка-->
+            <div class="search-wrapper">
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Поиск:" 
+                       list="categorySuggestions">
+                <datalist id="categorySuggestions">
+                    <option value="Смартфоны">
+                    <option value="Ноутбуки">
+                    <option value="Часы">
+                </datalist>
+                <button class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider-section">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <input type="radio" name="slider" id="slide1" class="slider-input" checked>
+                    <input type="radio" name="slider" id="slide2" class="slider-input">
+                    <input type="radio" name="slider" id="slide3" class="slider-input">
+                    
+                    <div class="slides">
+
+                        <!--слайдеры-->
+                         <div class="slide">
+                            <div class="slide-image">
+                                <img src="iphon.png" alt="Iphon">
+                            </div>
+                            <div class="slide-info">
+                                <h2 class="slide-title">iPhone 17 Pro Max</h2>
+                                <div class="slide-price">119 990 ₽</div>
+                                <button class="buy-btn">Купить</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="kolonka.png" alt="Колонка">
+                            </div>
+                            <div class="slide-info">
+                                <h2 class="slide-title">Яндекс станция 2</h2>
+                                <div class="slide-price">14 999 ₽</div>
+                                <button class="buy-btn">Купить</button>
+                            </div>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="nayshniki.png" alt="Наушники">
+                            </div>
+                            <div class="slide-info">
+                                <h2 class="slide-title">Наушники - Sony WH-1000XM6</h2>
+                                <div class="slide-price">29 990 ₽</div>
+                                <button class="buy-btn">Купить</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-dots">
+                        <label for="slide1" class="dot"></label>
+                        <label for="slide2" class="dot"></label>
+                        <label for="slide3" class="dot"></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--преимущества-->
+        <section class="advantages-section">
+            <div class="advantages-container">
+                <h2 class="advantages-title">Почему выбирают нас?</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <img src="money.png" alt="Привлекательные цены">
+                        </div>
+                        <div class="advantage-content">
+                            <h3 class="advantage-title">Привлекательные цены</h3>
+                            <p class="advantage-description">Лучшие цены на рынке. Регулярные скидки до 70% на популярные товары. Цены ниже, чем у конкурентов!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <img src="bell.png" alt="Ежемесячные акции">
+                        </div>
+                        <div class="advantage-content">
+                            <h3 class="advantage-title">Ежемесячные акции</h3>
+                            <p class="advantage-description">Каждый месяц новые акции и специальные предложения. Следите за обновлениями и не упустите выгоду!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <img src="clock.png" alt="Круглосуточная поддержка">
+                        </div>
+                        <div class="advantage-content">
+                            <h3 class="advantage-title">Круглосуточная поддержка</h3>
+                            <p class="advantage-description">Наши специалисты готовы помочь вам 24/7. Оперативное решение любых вопросов по телефону, чату или email.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <img src="bags.png" alt="Быстрая покупка">
+                        </div>
+                        <div class="advantage-content">
+                            <h3 class="advantage-title">Быстрая покупка</h3>
+                            <p class="advantage-description">Всего в 2 клика. Минимальное время оформления заказа. Доставка от 1 часа по городу.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--популярные товары-->
+        <section class="products-section">
+            <div class="products-container">
+                <h2 class="products-title">Популярные товары</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="laptop.png" alt="Ноутбук">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Thunderobot Range 16 Evo</h3>
+                            <div class="product-category">Ноутбуки</div>
+                            <div class="product-brand">Thunderobot</div>
+                            <div class="product-stock stock-in">В наличии: 15 шт</div>
+                            <div class="product-price">116 999 ₽</div>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="sos.jpg" alt="Пылесос">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Вертикальный Пылесос</h3>
+                            <div class="product-category">Пылесосы</div>
+                            <div class="product-brand">RED Solution</div>
+                            <div class="product-stock stock-in">В наличии: 8 шт</div>
+                            <div class="product-price">16 331 ₽</div>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ochistitel.jpg" alt="Очиститель">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Очиститель воздуха</h3>
+                            <div class="product-category">Очистители</div>
+                            <div class="product-brand">COOLROOM</div>
+                            <div class="product-stock stock-in">В наличии: 23 шт</div>
+                            <div class="product-price">9 471 ₽</div>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ventilator.jpg" alt="Вентилятор">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Вентилятор циклонный</h3>
+                            <div class="product-category">Вентиляторы</div>
+                            <div class="product-brand">wowhome</div>
+                            <div class="product-stock stock-low">Осталось: 3 шт</div>
+                            <div class="product-price">1 235 ₽</div>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="chainik.jpg" alt="Чайник">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Чайник электрический</h3>
+                            <div class="product-category">Чайники</div>
+                            <div class="product-brand">Cronier</div>
+                            <div class="product-stock stock-in">В наличии: 42 шт</div>
+                            <div class="product-price">3 000 ₽</div>
+                            <button class="cart-btn">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--ппартнеры-->
+        <section class="partners-section">
+            <div class="partners-container">
+                <h2 class="partners-title">Наши партнеры</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img src="dolby.png" alt="Dolby Digital">
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">Dolby Digital</h3>
+                            <p class="partner-description">Мировой лидер в области технологий объемного звука и аудио-решений премиум-класса</p>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img src="razer.png" alt="Razer">
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">Razer</h3>
+                            <p class="partner-description">Ведущий бренд в мире игровой периферии, создающий инновационные устройства для геймеров</p>
+                        </div>
+                    </div>
+                    
+                    <div class="partner-card">
+                        <div class="partner-logo">
+                            <img src="blackberry.png" alt="BlackBerry">
+                        </div>
+                        <div class="partner-info">
+                            <h3 class="partner-name">BlackBerry</h3>
+                            <p class="partner-description">Пионер в области мобильной безопасности и корпоративных решений для бизнеса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--подвал-->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!--левая часть подвала-->
+            <div class="footer-left">
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        <a href="tel:8-800-999-55-99">8-800-999-55-99</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:tech@zone.ru">tech@zone.ru</a>
+                    </div>
+                    <div class="contact-item about-link">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <a href="#about" class="about-us-link">О нас</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--середина подвала-->
+            <div class="footer-middle">
+                <div class="dropdown-section">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Партнерам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Партнерская программа</a>
+                            <a href="#">Оптовые закупки</a>
+                            <a href="#">Франчайзинг</a>
+                            <a href="#">Рекламодателям</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Клиентам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Поддержка</a>
+                            <a href="#">Доставка и оплата</a>
+                            <a href="#">Возврат и гарантия</a>
+                            <a href="#">Программа лояльности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--правая часть подвала-->
+            <div class="footer-right">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Главная</a>
+                    <a href="register.html" class="footer-nav-link">Регистрация</a>
+                    <a href="login.html" class="footer-nav-link">Авторизация</a>
+                    <a href="profile.html" class="footer-nav-link">Личный кабинет</a>
+                    <a href="admin.html" class="footer-nav-link">Административная панель</a>
+                </div>
+            </div>
+        </div>
+        
+        <!--кнопка ывбора темы-->
+        <div class="theme-switch-wrapper">
+            <label for="theme-toggle" class="theme-toggle-label">
+                <span class="theme-toggle-slider"></span>
+                <span class="theme-toggle-text">Светлая тема</span>
+            </label>
+        </div>
+    </footer>
+</body>
+</html>

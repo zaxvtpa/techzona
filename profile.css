@@ -1,0 +1,452 @@
+/*личный кабинет*/
+.profile-main {
+    min-height: calc(100vh - 300px);
+    padding: 60px 24px;
+    background: var(--bg-body);
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*шапка профиля*/
+.profile-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.profile-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--card-text) 0%, #c6ff33 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+}
+
+.profile-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/*блоки*/
+.profile-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(198, 255, 51, 0.05);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--card-text);
+}
+
+/*информация о пользователе*/
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.info-item {
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:nth-child(odd) {
+    border-right: 1px solid var(--border-color);
+}
+
+.info-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--card-text);
+}
+
+/*история покупок*/
+.history-list {
+    padding: 8px 0;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+    gap: 24px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    background: rgba(198, 255, 51, 0.05);
+}
+
+.history-date {
+    min-width: 80px;
+    text-align: center;
+    background: rgba(198, 255, 51, 0.1);
+    padding: 10px 12px;
+    border-radius: 16px;
+}
+
+.date-day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #7d39eb;
+    display: block;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: lowercase;
+}
+
+.date-year {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.history-info {
+    flex: 1;
+}
+
+.history-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--card-text);
+    margin-bottom: 4px;
+}
+
+.history-category {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.history-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c6ff33;
+    white-space: nowrap;
+}
+
+/*настройки профиля*/
+.settings-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.settings-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.settings-icon {
+    font-size: 2rem;
+}
+
+.settings-text {
+    flex: 1;
+}
+
+.settings-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--card-text);
+    margin-bottom: 4px;
+}
+
+.settings-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.settings-btn {
+    background: linear-gradient(135deg, #7d39eb, #441a88);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+}
+
+.settings-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(180, 51, 255, 0.4);
+}
+
+/*модальное окно*/
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+#passwordModal:target {
+    display: flex;
+}
+
+.modal-container {
+    background: var(--bg-card);
+    border-radius: 28px;
+    width: 90%;
+    max-width: 450px;
+    animation: modalFadeIn 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--card-text);
+}
+
+.modal-close {
+    font-size: 24px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.modal-body {
+    padding: 28px;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--card-text);
+    margin-bottom: 8px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-body);
+    transition: all 0.3s ease;
+}
+
+.form-field input:focus {
+    border-color: #c6ff33;
+    box-shadow: 0 0 0 3px rgba(198, 255, 51, 0.2);
+}
+
+.modal-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #8940ff, #6a31c5);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin-top: 8px;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(180, 51, 255, 0.4);
+}
+
+/*адаптивность версий */
+@media (max-width: 768px) {
+    .profile-main {
+        padding: 40px 16px;
+    }
+    
+    .profile-title {
+        font-size: 1.8rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-item:nth-child(odd) {
+        border-right: none;
+    }
+    
+    .history-item {
+        flex-wrap: wrap;
+        padding: 16px 20px;
+        gap: 12px;
+    }
+    
+    .history-date {
+        min-width: 70px;
+    }
+    
+    .history-price {
+        margin-left: auto;
+    }
+    
+    .settings-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .settings-info {
+        flex-direction: column;
+    }
+    
+    .modal-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-header {
+        padding: 16px 20px;
+    }
+    
+    .info-item {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .history-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .history-date {
+        display: inline-flex;
+        gap: 8px;
+        align-items: baseline;
+        background: none;
+        padding: 0;
+    }
+    
+    .date-day, .date-month, .date-year {
+        display: inline;
+        font-size: 0.85rem;
+    }
+    
+    .date-day {
+        font-size: 0.9rem;
+    }
+    
+    .history-price {
+        margin-left: 0;
+    }
+}
+.logo-img {
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+#theme-toggle:checked ~ .header .logo-img {
+    filter: brightness(0) invert(0);
+}
+
+.burger-icon {
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+#theme-toggle:checked ~ .header .burger-icon {
+    filter: brightness(0) invert(0);
+}
+.profile-main,
+body:has(.profile-main) {
+    background: #252525 !important;
+}
+
+#theme-toggle:checked ~ .profile-main,
+#theme-toggle:checked ~ body:has(.profile-main) {
+    background: #252525 !important;
+}

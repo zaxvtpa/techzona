@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - TechzonE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+    <input type="checkbox" id="filter-toggle" class="filter-toggle-input">
+
+    <header class="header">
+        <div class="header-container">
+            <div class="left-section">
+                <a href="profile.html" class="avatar-link">
+                    <div class="avatar">
+                        <img src="imgaccount.png" alt="Личный кабинет">
+                    </div>
+                </a>
+                
+                <div class="nav-buttons">
+                    <a href="profile.html">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">Кабинет</button>
+                    </a>
+                    <a href="index.html">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">Главная</button>
+                    </a>
+                    <a href="catalog.html">
+                    <button class="nav-btn" onclick="window.location.href='catalog.html'">Каталог товаров</button>
+                    </a>
+                </div>
+                
+                <details class="burger-menu">
+                    <summary class="burger-summary">
+                        <img class="burger-icon" src="imgcatalogwhite.png" alt="Меню">
+                    </summary>
+                    <div class="mobile-menu">
+                        <button class="mobile-nav-btn" onclick="window.location.href='index.html'">Поддержка</button>
+                        <a href="index.html">
+                        <button class="mobile-nav-btn" onclick="window.location.href='index.html'">Главная</button>
+                        </a>
+                        <a href="catalog.html">
+                        <button class="mobile-nav-btn" onclick="window.location.href='catalog.html'">Каталог товаров</button>
+                        </a>
+                        
+                        <div class="mobile-search-wrapper">
+                            <input type="text" class="mobile-search-input" placeholder="Поиск:" list="mobileCategorySuggestions">
+                            <datalist id="mobileCategorySuggestions">
+                                <option value="Смартфоны">
+                                <option value="Ноутбуки">
+                                <option value="Часы">
+                                <option value="Наушники">
+                                <option value="Планшеты">
+                            </datalist>
+                            <button class="mobile-search-btn">Найти</button>
+                        </div>
+                        
+                        <a href="profile.html" class="mobile-avatar-link">
+                            <div class="mobile-avatar">
+                                <img src="imgaccount.png" alt="Личный кабинет">
+                                <span>Личный кабинет</span>
+                            </div>
+                        </a>
+                    </div>
+                </details>
+            </div>
+
+            <div class="logo-center">
+                <a href="index.html">
+                    <img class="logo-img" src="logowhite.png" alt="Логотип сайта">
+                </a>
+            </div>
+
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Поиск:" list="categorySuggestions">
+                <datalist id="categorySuggestions">
+                    <option value="Смартфоны">
+                    <option value="Ноутбуки">
+                    <option value="Часы">
+                    <option value="Наушники">
+                    <option value="Планшеты">
+                </datalist>
+                <button class="search-btn">Найти</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-main">
+        <div class="catalog-container">
+            <div class="catalog-header">
+                <h1 class="catalog-title">Каталог гаджетов</h1>
+                <p class="catalog-subtitle">Выберите идеальное устройство для себя</p>
+            </div>
+
+            <!--фильтры на мобилке-->
+            <label for="filter-toggle" class="mobile-filter-btn">📱 Фильтр</label>
+
+            <div class="catalog-content">
+
+                <!--боковая панель фильтров-->
+                <aside class="filter-sidebar">
+                    <div class="filter-header">
+                        <h3>Фильтрация</h3>
+                        <label for="filter-toggle" class="filter-close">✕</label>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Категории</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="all" checked> Все
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="smartphones"> Смартфоны
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="laptops"> Ноутбуки
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="watches"> Умные часы
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="headphones"> Наушники
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="tablets"> Планшеты
+                        </label>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Цена</h4>
+                        <div class="price-range">
+                            <input type="range" min="0" max="300000" value="300000">
+                            <div class="price-inputs">
+                                <input type="number" placeholder="от">
+                                <input type="number" placeholder="до">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <h4>Бренд</h4>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="apple"> Apple
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"value="samsung"> Samsung
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="sony"> Sony
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="xiaomi"> Xiaomi
+                        </label>
+                    </div>
+                    <button class="filter-reset">Сбросить фильтры</button>
+                </aside>
+
+                <!--сетка товаров-->
+                <div class="products-grid">
+                    
+                    <!--товары-->
+                    <div class="product-card" data-category="smartphones" data-brand="apple">
+                        <div class="product-image">
+                            <img src="iphone15promax.jpg" alt="iPhone 15 Pro Max">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">iPhone 15 Pro Max</h3>
+                            <div class="product-category">Смартфоны</div>
+                            <div class="product-brand">Apple</div>
+                            <div class="product-price">119 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="stock-text">В наличии: 15 шт</span>
+                            </div>
+                            <a href="product.html?id=1" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="laptops" data-brand="apple">
+                        <div class="product-image">
+                            <img src="mackbook.jpg" alt="MacBook Pro 16">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">MacBook Pro 16</h3>
+                            <div class="product-category">Ноутбуки</div>
+                            <div class="product-brand">Apple</div>
+                            <div class="product-price">249 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star half">★</span>
+                                <span class="stock-text">В наличии: 8 шт</span>
+                            </div>
+                            <a href="product.html?id=2" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="watches" data-brand="apple">
+                        <div class="product-image">
+                            <img src="applewatch.jpg" alt="Apple Watch Ultra 2">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Apple Watch Ultra 2</h3>
+                            <div class="product-category">Умные часы</div>
+                            <div class="product-brand">Apple</div>
+                            <div class="product-price">89 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                                <span class="stock-text">В наличии: 23 шт</span>
+                            </div>
+                            <a href="product.html?id=3" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="headphones" data-brand="sony">
+                        <div class="product-image">
+                            <img src="sony.jpg" alt="Sony WH-1000XM6">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Sony WH-1000XM6</h3>
+                            <div class="product-category">Наушники</div>
+                            <div class="product-brand">Sony</div>
+                            <div class="product-price">34 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="stock-text">В наличии: 42 шт</span>
+                            </div>
+                            <a href="product.html?id=4" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="tablets" data-brand="samsung">
+                        <div class="product-image">
+                            <img src="planshet.jpg" alt="Samsung Galaxy Tab S9">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Samsung Galaxy Tab S9</h3>
+                            <div class="product-category">Планшеты</div>
+                            <div class="product-brand">Samsung</div>
+                            <div class="product-price">79 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="stock-text low">Осталось: 3 шт</span>
+                            </div>
+                            <a href="product.html?id=5" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="smartphones" data-brand="samsung">
+                        <div class="product-image">
+                            <img src="samsungs24.jpg" alt="Samsung Galaxy S24 Ultra">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Samsung Galaxy S24 Ultra</h3>
+                            <div class="product-category">Смартфоны</div>
+                            <div class="product-brand">Samsung</div>
+                            <div class="product-price">109 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star half">★</span>
+                                <span class="stock-text">В наличии: 12 шт</span>
+                            </div>
+                            <a href="product.html?id=6" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="laptops" data-brand="asus">
+                        <div class="product-image">
+                            <img src="asus.jpg" alt="ASUS ROG Zephyrus">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">ASUS ROG Zephyrus G16</h3>
+                            <div class="product-category">Ноутбуки</div>
+                            <div class="product-brand">ASUS</div>
+                            <div class="product-price">189 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star">★</span>
+                                <span class="stock-text">В наличии: 5 шт</span>
+                            </div>
+                            <a href="product.html?id=7" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="headphones" data-brand="xiaomi">
+                        <div class="product-image">
+                            <img src="xiomi.jpg" alt="Xiaomi Buds 5 Pro">
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-name">Xiaomi Buds 5 Pro</h3>
+                            <div class="product-category">Наушники</div>
+                            <div class="product-brand">Xiaomi</div>
+                            <div class="product-price">12 990 ₽</div>
+                            <div class="product-stock">
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star filled">★</span>
+                                <span class="star half">★</span>
+                                <span class="stock-text">В наличии: 56 шт</span>
+                            </div>
+                            <a href="product.html?id=8" class="product-link">Подробнее →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--подвал-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:8-800-999-55-99">8-800-999-55-99</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:tech@zone.ru">tech@zone.ru</a>
+                    </div>
+                    <div class="contact-item about-link">
+                        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="16" x2="12" y2="12"/>
+                            <line x1="12" y1="8" x2="12.01" y2="8"/>
+                        </svg>
+                        <a href="#about" class="about-us-link">О нас</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="dropdown-section">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Партнерам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Партнерская программа</a>
+                            <a href="#">Оптовые закупки</a>
+                            <a href="#">Франчайзинг</a>
+                            <a href="#">Рекламодателям</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Клиентам ▼</button>
+                        <div class="dropdown-content">
+                            <a href="#">Поддержка</a>
+                            <a href="#">Доставка и оплата</a>
+                            <a href="#">Возврат и гарантия</a>
+                            <a href="#">Программа лояльности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-nav">
+                    <a href="index.html" class="footer-nav-link">Главная</a>
+                    <a href="register.html" class="footer-nav-link">Регистрация</a>
+                    <a href="login.html" class="footer-nav-link">Авторизация</a>
+                    <a href="profile.html" class="footer-nav-link">Личный кабинет</a>
+                    <a href="admin.html" class="footer-nav-link">Административная панель</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="theme-switch-wrapper">
+            <label for="theme-toggle" class="theme-toggle-label">
+                <span class="theme-toggle-slider"></span>
+                <span class="theme-toggle-text">Светлая тема</span>
+            </label>
+        </div>
+    </footer>
+</body>
+</html>
