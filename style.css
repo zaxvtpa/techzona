@@ -451,6 +451,9 @@ body {
     transform: translateX(-200%);
 }
 
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
 .slide-image {
     flex: 1;
     display: flex;
